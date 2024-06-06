@@ -18,7 +18,7 @@ export default function HeaderComp() {
        <ul className='flex gap-4 font-medium text-slate-950'>
           <Link to='/'><li>Home</li></Link>
           <Link to='/about'><li>About</li></Link>
-          <Link to='/sign-in'><li>Sign in</li></Link> 
+          <Link to='/register'><li>Register</li></Link> 
        </ul>
      </header>
   )
