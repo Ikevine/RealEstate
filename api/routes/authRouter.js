@@ -1,9 +1,10 @@
 import express from 'express';
-import {getUser} from '../controllers/userController.js'
+import {signUp} from '../controllers/authController.js'
 
 const router = express.Router();
 
-router.get('/', getUser)
+// Api
 
+router.post('/', signUp);
 
 export default router;
