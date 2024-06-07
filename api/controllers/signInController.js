@@ -10,7 +10,7 @@ export const signIn = async (req, res, next)=>{
         //find if the email exist
         const validUser = await User.findOne({email: email});
 
-        if(!validUser) return next(errorHandler(404, 'User not found'));
+        if(!validUser) return next(errorHandler(404, 'User not found, I forgot'));
         
         //check the password using bcrypt
         const validPassword =  bcryptjs.compareSync(password, validUser.password);
