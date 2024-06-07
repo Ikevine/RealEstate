@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRouter from './routes/userRoutes.js'
 import signUpRouter from './routes/authRouter.js'
-import { stat } from 'fs/promises';
+import signInRouter from './routes/signInRouter.js'
 dotenv.config();
 
 const app = express();
@@ -30,6 +30,8 @@ app.use("/api/user", userRouter);
 //auth route
 app.use('/api/signup',signUpRouter);
 
+//SignIn route
+app.use('/api/signin', signInRouter);
 
 //middleware to handle errors
 app.use((err, req, res , next)=>{

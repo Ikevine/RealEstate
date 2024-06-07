@@ -25,7 +25,7 @@ function login() {
         />
         {/* button */}
         <button  className='bg-slate-700 text-white p-3 rounded-lg  hover:opacity-95'>Sign in</button>    </form>
-    <p>Don't have an account? <Link to='/login' className='text-slate-900 font-bold text-md'>Sign up</Link> </p>
+    <p>Don't have an account? <Link to='/register' className='text-slate-900 font-bold text-md'>Sign up</Link> </p>
 </section>
   )
 }
