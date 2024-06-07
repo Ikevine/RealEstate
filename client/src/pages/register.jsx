@@ -84,7 +84,7 @@ const handleSubmit = async (e) =>{
               onChange={handleChange}
             />
             {/* button */}
-              <button disabled={Loading} className='bg-slate-700 text-white p-3 rounded-lg  hover:opacity-95'>{Loading? 'Loading ...': 'Sign in'}</button>
+              <button disabled={Loading} className='bg-slate-700 text-white p-3 rounded-lg  hover:opacity-95'>{Loading? 'Loading ...': 'Sign up'}</button>
         </form>
         <p>Have an account? <Link to='/login' className='text-slate-900 font-bold text-md'>Sign in</Link> </p>
 

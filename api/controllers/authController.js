@@ -6,7 +6,6 @@ export const signUp =  async (req, res, next)=>{
     //need to save user to databse
     const {name , email , password} = req.body;
     const hashPassword = bcryptjs.hashSync(password, 10);
-    console.log(hashPassword);
     const newUser = new User({name, email, password: hashPassword});
     try{
         await newUser.save();
