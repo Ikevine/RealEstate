@@ -1,7 +1,9 @@
 import React from 'react'
 import {FaSearch} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 export default function HeaderComp() {
+  const {currentUser} = useSelector(state => state.user);
   return (
      <header className='flex justify-evenly items-center w-full bg-slate-200 py-2'>
        <Link to='/'>
@@ -18,7 +20,11 @@ export default function HeaderComp() {
        <ul className='flex gap-4 font-medium text-slate-950'>
           <Link to='/'><li>Home</li></Link>
           <Link to='/about'><li>About</li></Link>
-          <Link to='/register'><li>Register</li></Link> 
+          <Link to='/profile'>
+            {/* Condition show the profile if user is authenticated other wise hide it */}
+               {currentUser? (<img className='w-7 h-7 object-cover rounded-full' src={currentUser.avatar} alt='user profile'/>): <p>Register</p>}
+            </Link> 
+            
        </ul>
      </header>
   )
