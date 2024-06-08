@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import userRouter from './routes/userRoutes.js'
 import signUpRouter from './routes/authRouter.js'
 import signInRouter from './routes/signInRouter.js'
+import signOutRouter from './routes/authRouter.js'
 dotenv.config();
 
 const app = express();
@@ -33,6 +34,8 @@ app.use('/api/signup',signUpRouter);
 //SignIn route
 app.use('/api/signin', signInRouter);
 
+//Auth by google
+app.use('/api/auth/google', signOutRouter)
 //middleware to handle errors
 app.use((err, req, res , next)=>{
     const statusCode = err.statusCode || 500;

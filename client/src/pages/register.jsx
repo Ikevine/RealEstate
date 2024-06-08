@@ -1,5 +1,6 @@
 import React, { useState } from 'react' 
 import { Link, useNavigate } from 'react-router-dom'
+import OAuth from '../components/OAuth';
  
 export default function register() {
 //handle the text change
@@ -84,7 +85,8 @@ const handleSubmit = async (e) =>{
               onChange={handleChange}
             />
             {/* button */}
-              <button disabled={Loading} className='bg-slate-700 text-white p-3 rounded-lg  hover:opacity-95'>{Loading? 'Loading ...': 'Sign up'}</button>
+              <button disabled={Loading} className='bg-slate-700 text-white p-3 rounded-lg w-full hover:opacity-95'>{Loading? 'Loading ...': 'Sign up'}</button>
+              <OAuth/>
         </form>
         <p>Have an account? <Link to='/login' className='text-slate-900 font-bold text-md'>Sign in</Link> </p>
 

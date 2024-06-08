@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 //impporting dispatch
 import { useDispatch, useSelector } from 'react-redux'
 import { signInStart, signInSuccess , signInFailure } from '../redux/user/userSlice.js'
+import OAuth from '../components/OAuth';
 function Login() {
   
 //handle the text change
@@ -77,7 +78,8 @@ const handleChange = (e) =>{
           onChange={handleChange}
         />
         {/* button */}
-        <button disabled={Loading} className='bg-slate-700 text-white p-3 rounded-lg  hover:opacity-95'>{Loading? 'Loading ...': 'Sign in'}</button>  
+        <button disabled={Loading} className='bg-slate-700 text-white p-3 rounded-lg w-full hover:opacity-95'>{Loading? 'Loading ...': 'Sign in'}</button>  
+        <OAuth/>
        </form>
     <p>Don't have an account? <Link to='/register' className='text-slate-900 font-bold text-md'>Sign up</Link> </p>
     {handleError && <p className='bg-red-500 mt-5'>Error: {handleError}</p>}

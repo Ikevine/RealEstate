@@ -5,6 +5,7 @@ import { errorHandler } from "../utils/error.js";
 export const signUp =  async (req, res, next)=>{
     //need to save user to databse
     const {name , email , password} = req.body;
+   
     const hashPassword = bcryptjs.hashSync(password, 10);
     const newUser = new User({name, email, password: hashPassword});
     try{
@@ -14,5 +15,5 @@ export const signUp =  async (req, res, next)=>{
     catch(error){
       next(errorHandler(550, error));
     }
-     
 }
+
