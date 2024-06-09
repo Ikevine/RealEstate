@@ -5,6 +5,8 @@ import userRouter from './routes/userRoutes.js'
 import signUpRouter from './routes/authRouter.js'
 import signInRouter from './routes/signInRouter.js'
 import signOutRouter from './routes/authRouter.js'
+import cookieParser from 'cookie-parser';
+
 dotenv.config();
 
 const app = express();
@@ -12,7 +14,7 @@ const app = express();
 //allowing to use Json and x-code
 app.use(express.json());
 app.use(express.urlencoded());
-
+app.use(cookieParser());
 //Connecting to mongodb
 mongoose.connect(process.env.MONGO)
 .then(()=>{
